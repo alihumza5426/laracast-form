@@ -1,5 +1,5 @@
 {
-    "name": "devopstools/laracast-table",
+    "name": "devopstools/laracast-forms",
     "description": "A reusable Laravel package for testing, validating, and managing form workflows and validation logic.",
     "keywords": [
         "Forms",

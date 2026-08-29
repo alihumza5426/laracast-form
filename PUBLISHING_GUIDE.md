@@ -27,10 +27,10 @@ This guide covers everything you need to know to publish your package to [Packag
 
 ## 2. Package Directory Structure
 
-Your standalone package folder (`laracast-table/`) is organized as follows:
+Your standalone package folder (`laracast-forms/`) is organized as follows:
 
 ```text
-laracast-table/
+laracast-forms/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -82,11 +82,11 @@ laracast-table/
 
 ## Step 1: Preparing `composer.json`
 
-Ensure your package's `composer.json` has the correct vendor and package name (e.g. `your-github-username/laracast-table` or `khan/forms`):
+Ensure your package's `composer.json` has the correct vendor and package name (e.g. `your-github-username/laracast-forms` or `khan/forms`):
 
 ```json
 {
-    "name": "your-username/laracast-table",
+    "name": "your-username/laracast-forms",
     "description": "A reusable Laravel package for querying table data by date and form testing.",
     "keywords": ["laravel", "forms", "table", "student-fee", "database"],
     "license": "MIT",
@@ -139,9 +139,9 @@ Ensure your package's `composer.json` has the correct vendor and package name (e
 
 ## Step 2: Pushing the Package to GitHub / GitLab
 
-1. Open your terminal inside the package directory (`laracast-table/`):
+1. Open your terminal inside the package directory (`laracast-forms/`):
    ```bash
-   cd laracast-table
+   cd laracast-forms
    ```
 
 2. Initialize a Git repository:
@@ -151,12 +151,12 @@ Ensure your package's `composer.json` has the correct vendor and package name (e
    git commit -m "feat: initial release of forms & table package"
    ```
 
-3. Create a new public repository on GitHub (e.g. named `laracast-table` or `forms`).
+3. Create a new public repository on GitHub (e.g. named `laracast-forms` or `forms`).
 
 4. Link and push to GitHub:
    ```bash
    git branch -M main
-   git remote add origin https://github.com/your-username/laracast-table.git
+   git remote add origin https://github.com/your-username/laracast-forms.git
    git push -u origin main
    ```
 
@@ -181,7 +181,7 @@ git push origin v1.0.0
 2. Click the **Submit** button in the top navigation bar.
 3. Paste your GitHub repository URL:
    ```text
-   https://github.com/your-username/laracast-table
+   https://github.com/your-username/laracast-forms
    ```
 4. Click **Check** -> Packagist will validate your `composer.json`.
 5. Click **Submit** -> Your package is now live on Packagist! 🎉
@@ -207,7 +207,7 @@ To make Packagist automatically update whenever you push new Git commits or tags
 Now, in **any** Laravel project around the world, developers can install your package with a single command:
 
 ```bash
-composer require your-username/laracast-table
+composer require your-username/laracast-forms
 ```
 
 ### Publish Configuration & Views:
