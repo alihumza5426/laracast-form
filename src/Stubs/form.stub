@@ -1,0 +1,37 @@
+<?php
+
+namespace {{ namespace }};
+
+use Khan\Forms\Contracts\FormTest;
+use Khan\Forms\Facades\Forms;
+
+class {{ class }} implements FormTest
+{
+    /**
+     * Handle the form test/validation logic.
+     *
+     * @param array<string, mixed> $data
+     * @return array{passed: bool, message: string, errors: array, data: array}
+     */
+    public function handle(array $data): array
+    {
+        // 1. You can perform standard validation using the Forms facade:
+        $validation = Forms::validate($data, [
+            // Define rules here, e.g.:
+            // 'name' => ['required', 'string'],
+            // 'email' => ['required', 'email'],
+        ]);
+
+        if (!$validation['passed']) {
+            return $validation;
+        }
+
+        // 2. Add custom domain/business rules or test logic:
+        return [
+            'passed' => true,
+            'message' => 'The form passed successfully.',
+            'errors' => [],
+            'data' => $validation['data'] ?? $data,
+        ];
+    }
+}
