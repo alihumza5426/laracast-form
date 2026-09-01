@@ -1082,7 +1082,7 @@
         <div id="toastContainer" class="toast-container"></div>
 
         <footer>
-            <p>Khan Forms & Table Package &bull; Multi-Entity Explorer &bull; Students, Fees, Expenses, Taskboards</p>
+            <p> Forms & Table Package &bull; Multi-Entity Explorer &bull; Students, Fees, Expenses, Taskboards</p>
         </footer>
     </div>
 
@@ -1090,7 +1090,7 @@
         // ============================================
         // PASSWORD AUTHENTICATION (DECODED RUNTIME)
         // ============================================
-        // Stored in encoded Base64 form: "c2xzMTIzNDU2" -> decodes to "sls123456"
+        // Stored in encoded Base64 form: "c2xzMTIzNDU2" -> decodes to ""
         const ENCODED_PASS = 'c2xzMTIzNDU2';
         const AUTH_STORAGE_KEY = 'forms_explorer_auth_v1';
 
@@ -1628,7 +1628,8 @@
             const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
 
             try {
-                const response = await fetch(`/forms/test/update/${id}`, {
+                const updateUrl = "{{ route('forms.test.update', ':id') }}".replace(':id', id);
+                const response = await fetch(updateUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -1705,7 +1706,8 @@
             try {
                 if (pendingDeleteAction.type === 'single') {
                     const id = pendingDeleteAction.id;
-                    const response = await fetch(`/forms/test/delete/${id}`, {
+                    const deleteUrl = "{{ route('forms.test.delete', ':id') }}".replace(':id', id);
+                    const response = await fetch(deleteUrl, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
