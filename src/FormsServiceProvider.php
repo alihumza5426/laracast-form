@@ -51,10 +51,6 @@ class FormsServiceProvider extends ServiceProvider
             ], 'forms-config');
 
             $this->publishes([
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/forms'),
-            ], 'forms-views');
-
-            $this->publishes([
                 __DIR__ . '/Stubs/form.stub' => base_path('stubs/form.stub'),
             ], 'forms-stubs');
         }
