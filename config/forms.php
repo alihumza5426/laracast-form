@@ -31,6 +31,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Optional Form Stub Override
+    |--------------------------------------------------------------------------
+    |
+    | By default, the package generator uses the stub shipped inside the
+    | package itself so updates are picked up automatically. If you want to
+    | maintain a custom local stub, point this to an absolute path.
+    |
+    */
+
+    'stub_path' => env('FORMS_STUB_PATH', null),
+
+    /*
+    |--------------------------------------------------------------------------
     | Registered Form Classes
     |--------------------------------------------------------------------------
     |
@@ -60,3 +73,4 @@ return [
     ],
 
 ];
+

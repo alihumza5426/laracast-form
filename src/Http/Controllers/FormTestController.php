@@ -114,7 +114,11 @@ class FormTestController extends Controller
     public function update(Request $request, $id): JsonResponse
     {
         $entity = $request->input('entity', $request->query('entity', 'fees'));
-        $data = $request->all();
+
+        // Prefer the raw payload so we do not merge uploaded files or other
+        // request bag state into this update action.
+        $data = $request->isJson() ? (array) $request->json()->all() : $request->request->all();
+        unset($data['_token'], $data['_method'], $data['entity']);
 
         $result = Forms::updateEntry($entity, $id, $data);
 
@@ -175,3 +179,4 @@ class FormTestController extends Controller
         return response()->json($result, $status);
     }
 }
+

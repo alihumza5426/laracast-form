@@ -35,9 +35,9 @@ class MakeFormCommand extends GeneratorCommand
      */
     protected function getStub(): string
     {
-        $customPath = $this->laravel->basePath('stubs/form.stub');
+        $customPath = config('forms.stub_path');
 
-        if (file_exists($customPath)) {
+        if (is_string($customPath) && $customPath !== '' && file_exists($customPath)) {
             return $customPath;
         }
 
@@ -67,3 +67,4 @@ class MakeFormCommand extends GeneratorCommand
         ];
     }
 }
+

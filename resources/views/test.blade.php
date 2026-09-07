@@ -1610,12 +1610,26 @@
         async function submitEditEntry() {
             const id = document.getElementById('editEntryId').value;
             const form = document.getElementById('editForm');
-            const formData = new FormData(form);
             const payload = {};
-            formData.forEach((value, key) => {
-                payload[key] = value;
+
+            Array.from(form.elements).forEach((element) => {
+                if (!element.name || element.disabled) {
+                    return;
+                }
+
+                if (['button', 'submit', 'reset', 'fieldset'].includes(element.type)) {
+                    return;
+                }
+
+                if (element.name === 'id') {
+                    return;
+                }
+
+                payload[element.name] = element.value;
             });
-            payload['entity'] = currentEntity;
+
+            payload.id = id;
+            payload.entity = currentEntity;
 
             const editSpinner = document.getElementById('editSpinner');
             const editBtnText = document.getElementById('editBtnText');

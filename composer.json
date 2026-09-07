@@ -1,52 +1,53 @@
 {
-    "name": "devopstools/laracast-forms",
-    "description": "A reusable Laravel package for testing, validating, and managing form workflows and validation logic.",
-    "keywords": [
-        "Forms",
-        "form-testing",
-        "khan",
-        "laravel",
-        "validation"
-    ],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "DevOps",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.0|^8.1|^8.2|^8.3",
-        "illuminate/support": "^9.0|^10.0|^11.0",
-        "illuminate/validation": "^9.0|^10.0|^11.0",
-        "illuminate/console": "^9.0|^10.0|^11.0",
-        "illuminate/routing": "^9.0|^10.0|^11.0",
-        "illuminate/view": "^9.0|^10.0|^11.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "^7.0|^8.0|^9.0",
-        "phpunit/phpunit": "^9.5|^10.0|^11.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Khan\\Forms\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Khan\\Forms\\Tests\\": "tests/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Khan\\Forms\\FormsServiceProvider"
-            ],
-            "aliases": {
-                "Forms": "Khan\\Forms\\Facades\\Forms"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "devopstools/laracast-forms",
+  "description": "A reusable Laravel package for testing, validating, and managing form workflows and validation logic.",
+  "keywords": [
+    "Forms",
+    "form-testing",
+    "khan",
+    "laravel",
+    "validation"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "DevOps",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0|^8.1|^8.2|^8.3",
+    "illuminate/support": "^9.0|^10.0|^11.0",
+    "illuminate/validation": "^9.0|^10.0|^11.0",
+    "illuminate/console": "^9.0|^10.0|^11.0",
+    "illuminate/routing": "^9.0|^10.0|^11.0",
+    "illuminate/view": "^9.0|^10.0|^11.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.0|^8.0|^9.0",
+    "phpunit/phpunit": "^9.5|^10.0|^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Khan\\Forms\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Khan\\Forms\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Khan\\Forms\\FormsServiceProvider"
+      ],
+      "aliases": {
+        "Forms": "Khan\\Forms\\Facades\\Forms"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "version": "1.0.0"
 }
